@@ -1,0 +1,37 @@
+{
+    "config": {
+        "times": [{
+            "path": "https://player.vimeo.com/external/147605518.hd.mp4?s=59493f9ae8676d950dd6a3d9441a56b7a12bec0a&profile_id=113",
+            "thumbTema": "../img/thumb1.jpg",
+            "thumbInit": 32,
+            "thumbEnd": 43
+        }, {
+            "path": "https://player.vimeo.com/external/147605517.hd.mp4?s=0644e41a1b2ce8c645d19ceaaa576258a8705c32&profile_id=113",
+            "thumbTema": "img/thumb2.jpg",
+            "thumbInit": 129,
+            "thumbEnd": 138
+        },{
+            "path": "https://player.vimeo.com/external/147605515.hd.mp4?s=237bc490132e367e30756f0cdf615f2f22057d3b&profile_id=113",
+            "thumbTema": "img/thumb3.jpg",
+            "thumbInit": 186,
+            "thumbEnd": 195.5
+        }, {
+            "path": "https://player.vimeo.com/external/147605516.hd.mp4?s=7328ea9793d91daa27268d7aa25060dcc60cff05&profile_id=113",
+            "thumbTema": "img/thumb4.jpg",
+            "thumbInit": 132,
+            "thumbEnd": 141
+        },{
+            "path": "https://player.vimeo.com/external/147605519.hd.mp4?s=64f0354111a25ab759de993a9a09ba495c38c299&profile_id=113",
+            "thumbTema": "img/thumb5.jpg",
+            "thumbInit": 320,
+            "thumbEnd": 324
+        }, {
+            "path": "https://player.vimeo.com/external/147605520.hd.mp4?s=1092a50965b8fd3334d7f268f9bcca76a42a9fa9&profile_id=113",
+            "thumbTema": "img/thumb6.jpg",
+            "exercInit": 22,
+            "exercEnd": 30,
+            "acesse": "https://www.redeagroservices.com.br/"
+        }],
+        "loop": 10
+    }
+}

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Controle1</title>
+
+    <link rel="stylesheet" href="../../css/reset.css">
+    <link rel="stylesheet" href="../../css/animate.css">
+    <link rel="stylesheet" href="css/main.css">
+
+    <script src="../../js/vendor/jquery-1.11.2.min.js"></script>
+    <script src="../../js/vendor/videoApi.js"></script>
+    <script src="../../js/vendor/bigvideo.js"></script>
+    <script src="../../js/vendor/modernizrReset.js"></script>
+
+
+</head>
+
+<body>
+
+    <div id="bkg"> </div>
+
+    <script>
+        var infoVideo = {};
+        var _currentVideo = parent.course.currentVideo + 1;
+        infoVideo.loop = parent.course.modulosData["config"]["loop"];
+        infoVideo.path = parent.course.modulosData["config"]["times"][_currentVideo].path;
+        infoVideo.thumb = "../../" + parent.course.modulosData["config"]["times"][_currentVideo].thumbTema;
+
+        if (!Modernizr.touch) {
+
+            //Video
+            var self = this;
+
+            self.currentTimeInit = function currentTimeInit() {
+                BV.getPlayer().currentTime(1);
+                BV.getPlayer().play();
+            }
+
+            self.loopPlayer = function loopPlayer() {
+
+                if (BV.getPlayer().currentTime() >= infoVideo.loop) {
+                    self.currentTimeInit();
+                }
+            }
+
+
+            var BV = new $.BigVideo({
+                useFlashForFirefox: false
+            });
+            BV.init();
+            BV.show(infoVideo.path, {
+                doLoop: false,
+                ambient: true
+            });
+
+            BV.getPlayer().ready(function () {
+                self.currentTimeInit();
+            });
+
+            BV.getPlayer().on('timeupdate', function () {
+
+                self.loopPlayer()
+
+            });
+
+
+            parent.course.thumbVideo = BV;
+
+        } 
+        else //mobile
+        {
+            $(window).load(function () {
+                $('#bkg').css('background-image', "url(" + infoVideo.thumb + ")");
+            })
+        }
+    </script>
+</body>
+
+</html>
